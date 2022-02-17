@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kubectl
+spec:
+  serviceAccountName: podlister
+  containers:
+  - name: kubectl
+    image: docker.io/rancher/kubectl:v1.23.3
+    command:
+      - kubectl
+      - get
+      - pods
+      - -o
+      - yaml
